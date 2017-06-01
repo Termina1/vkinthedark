@@ -17,5 +17,5 @@ gulp.task("browser-sync", function () {
 });
 
 gulp.task("default", ["browser-sync"], function () {
-    gulp.watch(currentTask ++ "/**/*", htmlInjector);
+    gulp.watch(currentTask + "/**/*", htmlInjector);
 });
