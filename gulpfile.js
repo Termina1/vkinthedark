@@ -1,22 +1,21 @@
-var gulp         = require("gulp");
+var gulp = require("gulp");
 var browserSync  = require("browser-sync").create();
 var htmlInjector = require("bs-html-injector");
 
-/**
- * Start Browsersync
- */
+const task = process.argv[3] || 1;
+const tasks = ['debug', 'list', 'grid', 'table', 'form'];
+
+const currentTask = tasks[task];
+
 gulp.task("browser-sync", function () {
     browserSync.use(htmlInjector, {
         files: "*.html"
     });
     browserSync.init({
-        server: "debug"
+        server: currentTask
     });
 });
 
-/**
- * Default task
- */
 gulp.task("default", ["browser-sync"], function () {
-    gulp.watch("debug/**/*", htmlInjector);
+    gulp.watch(currentTask ++ "/**/*", htmlInjector);
 });
