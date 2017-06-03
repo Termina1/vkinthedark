@@ -3,7 +3,7 @@ var browserSync  = require("browser-sync").create();
 var htmlInjector = require("bs-html-injector");
 
 const task = process.argv[3] || 1;
-const tasks = ['debug', 'list', 'grid', 'table', 'form'];
+const tasks = ['debug', 'list', 'grid', 'table', 'form', 'profile', 'final'];
 
 const currentTask = tasks[task];
 
